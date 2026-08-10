@@ -1,0 +1,58 @@
+:root {
+  --bg: #f7f7f4;
+  --surface: #fff;
+  --text: #171717;
+  --muted: #747474;
+  --line: #e6e6e1;
+  --accent: #7b61ff;
+  --accent-soft: #eeeaff;
+  --max: 1040px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+.container { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+.site-header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.header-inner { height: 68px; display: flex; align-items: center; justify-content: space-between; }
+.brand { font-weight: 800; letter-spacing: -.03em; }
+nav { display: flex; gap: 22px; color: var(--muted); font-size: 14px; }
+nav a:hover, .footer-inner a:hover { color: var(--text); }
+.hero { padding: 110px 0 95px; border-bottom: 1px solid var(--line); }
+.eyebrow { margin: 0 0 10px; color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 22px; font-size: clamp(40px, 7vw, 72px); line-height: 1.08; letter-spacing: -.055em; }
+h2 { margin-bottom: 0; font-size: 30px; line-height: 1.25; letter-spacing: -.04em; }
+.hero-copy { max-width: 620px; margin-bottom: 0; color: var(--muted); font-size: 17px; }
+.section { padding: 82px 0; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; }
+.search-box input { width: 210px; padding: 11px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); outline: none; font: inherit; }
+.search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.categories { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.category { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 7px 13px; font-size: 13px; cursor: pointer; }
+.category.active, .category:hover { background: var(--text); color: white; border-color: var(--text); }
+.post-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.post-card { display: block; min-height: 220px; padding: 26px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; transition: transform .2s ease, box-shadow .2s ease; }
+.post-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.06); }
+.post-meta { display: flex; gap: 9px; align-items: center; color: var(--muted); font-size: 12px; }
+.post-tag { color: var(--accent); font-weight: 700; }
+.post-card h3 { margin: 14px 0 9px; font-size: 21px; line-height: 1.35; letter-spacing: -.03em; }
+.post-card p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+.empty { padding: 50px 0; color: var(--muted); text-align: center; }
+.about { border-top: 1px solid var(--line); max-width: var(--max); }
+.about p:not(.eyebrow) { max-width: 720px; color: #555; }
+.notice { margin-top: 22px; padding: 18px 20px; border-radius: 12px; background: var(--accent-soft); font-size: 14px; }
+code { padding: 2px 5px; border-radius: 5px; background: #eee; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+.site-footer { border-top: 1px solid var(--line); }
+.footer-inner { min-height: 76px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 700px) {
+  .container { width: min(calc(100% - 28px), var(--max)); }
+  .hero { padding: 76px 0 68px; }
+  .section { padding: 60px 0; }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  .search-box, .search-box input { width: 100%; }
+  .post-list { grid-template-columns: 1fr; }
+  .post-card { min-height: 0; }
+}
