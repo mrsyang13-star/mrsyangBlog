@@ -1,5 +1,12 @@
 [
   {
+    "title": "3번째 블로그 글입니다",
+    "date": "2026-08-10",
+    "category": "일상",
+    "excerpt": "이제 난 개발을 안해도 되는건가? 신기한 AI, 굉장한 녀석.",
+    "url": "posts/third-post.html"
+  },
+  {
     "title": "2번째 글입니다.",
     "date": "2026-08-10",
     "category": "일상",
