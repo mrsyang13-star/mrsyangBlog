@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mrsyang13-star.github.io/mrsyangBlog/sitemap.xml
